@@ -87,7 +87,7 @@ class VRPirates:
         rclone_sync_command = [
             'rclone', 'sync', ':http:/' + filename, self.root_directory,
             '--http-url', self._config_uri, '--tpslimit', '1.0',
-            '--tpslimit-burst', '3', '--user-agent', 'rclone/v1.60.1'
+            '--tpslimit-burst', '3', '--user-agent', 'rclone/v1.66.0'
         ]
 
         try:
@@ -162,7 +162,7 @@ class VRPirates:
             '--transfers', '1', '--multi-thread-streams', '0',
             '--progress', '--rc', '--http-url', self._config_uri,
             '--tpslimit', '1.0', '--tpslimit-burst', '3',
-            '--user-agent', 'rclone/v1.60.1'
+            '--user-agent', 'rclone/v1.66.0'
         ]
 
         try:
@@ -196,7 +196,7 @@ class VRPirates:
 
 
 if __name__ == '__main__':
-    downloader = VRPirates(config_link='https://wiki.vrpirates.club/downloads/vrp-public.json')
+    downloader = VRPirates(config_link='https://raw.githubusercontent.com/vrpyou/quest/main/vrp-public.json')
 
     downloader.update_game_list()
     downloader.search_game()
