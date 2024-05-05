@@ -25,12 +25,12 @@ $ ./vrpirates.py
 
 Search game by name, use index to select
 > beat saber
- 104  Beat Saber | 2023-12-13 21:50 UTC | 4134MB
+ 110  Beat Saber | 2024-04-11 18:05 UTC | 3875MB
  ...
- 108  Beat Saber w.BMBF | 2023-05-25 11:16 UTC | 3431MB
+ 114  Beat Saber v1.35.0 | 2024-04-16 05:02 UTC | 3494MB
 > +2021
- 931  Santa's Reindeer Racing 2021 | 2023-08-22 12:45 UTC | 191MB
-> 104
+ 1044 Santa's Reindeer Racing 2021 | 2023-08-25 19:38 UTC | 191MB
+> 110
 
 [+] Downloading...
 ...
@@ -40,7 +40,7 @@ Search game by name, use index to select
 
 ### Get url / password
 ```
-curl -k https://wiki.vrpirates.club/downloads/vrp-public.json
+curl https://raw.githubusercontent.com/vrpyou/quest/main/vrp-public.json
 ```
 ```json
 {
@@ -51,36 +51,36 @@ curl -k https://wiki.vrpirates.club/downloads/vrp-public.json
 
 ### Download game list
 ```sh
-rclone sync ":http:/meta.7z" . --http-url https://theapp.vrrookie.xyz/ --tpslimit 1.0 --tpslimit-burst 3 --user-agent "rclone/v1.60.1"
+rclone sync ":http:/meta.7z" . --http-url https://theapp.vrrookie.xyz/ --tpslimit 1.0 --tpslimit-burst 3 --user-agent "rclone/v1.66.0"
 ```
 
 ### Extract meta.7z
-Use the base64 decoded password
+Use the _base64_ decoded password
 ```sh
-7z e -y meta.7z -p🤭 VRP-GameList.txt
+7z e -y meta.7z -p$(echo 🤭 | base64 -d) VRP-GameList.txt
 ```
 
 ### Get game hash
-Use _Release Name_ column and md5sum with _newline_
+Use _Release Name_ column and **md5sum** with _newline_
 ```sh
-echo "Beat Saber v1011+1.34.2_7115288407 -VRP" | md5sum
+echo 'Beat Saber v1188+1.36.0_8486341502 -VRP' | md5sum
 ```
 
 ### Download the game
 ```sh
-rclone copy ":http:/523d5c0905acb71ea164029f2017bac8/" . --transfers 1 --multi-thread-streams 0 --progress --rc --http-url https://theapp.vrrookie.xyz/ --tpslimit 1.0 --tpslimit-burst 3 --user-agent "rclone/v1.60.1"
+rclone copy ":http:/295e02d0861558814c38fdb3b1ab2f7a/" . --transfers 1 --multi-thread-streams 0 --progress --rc --http-url https://theapp.vrrookie.xyz/ --tpslimit 1.0 --tpslimit-burst 3 --user-agent "rclone/v1.66.0"
 ```
 
 ### Extract the game
 Same as the _meta.7z_ file, in case of multiple volume it's all automatic
 ```sh
-7z x -p🤭 523d5c0905acb71ea164029f2017bac8.7z.001
+7z x -p$(echo 🤭 | base64 -d) 295e02d0861558814c38fdb3b1ab2f7a.7z.001
 ```
 
-### Sideload the apk / obb
+### Sideload the apk & obb
 Install the _apk_
 ```sh
-adb install -g -r com.beatgames.beatsaber.apk
+adb install -r com.beatgames.beatsaber.apk
 ```
 Create destination folder (fix for Q3)
 ```sh
