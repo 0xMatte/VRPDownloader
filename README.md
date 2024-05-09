@@ -1,7 +1,8 @@
 VRP Game Downloader
 ===================
 
-VRPirates wrapper to download game files without using the bloated [Rookie](https://github.com/VRPirates/rookie)
+VRPirates wrapper to download game files without using the bloated [Rookie](https://github.com/VRPirates/rookie).\
+discord: `mattewastaken`
 
 Requirements
 ------------
