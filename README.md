@@ -1,14 +1,14 @@
-VRP Game Downloader
+pRookie minimal VRPirates apk downloader
 ===================
 
-VRPirates wrapper to download game files without using the bloated [Rookie](https://github.com/VRPirates/rookie).\
+Like [Rookie](https://github.com/VRPirates/rookie) but minimal for Linux, written in Python.\
 discord: `mattewastaken`
 
 Requirements
 ------------
 
 ```sh
-pip install requests
+pip3 install requests
 apt install p7zip-full
 apt install rclone
 ```
@@ -19,7 +19,7 @@ Search using the game name, download it using the number, you can also search fo
 
 e.g.
 ```
-$ ./vrpirates.py
+$ ./prookie.py
 [+] Binaries satisfacted
 [+] Config fetched
 [+] Gamelist updated
@@ -41,7 +41,7 @@ Search game by name, use index to select
 
 ### Get url / password
 ```
-curl https://raw.githubusercontent.com/vrpyou/quest/main/vrp-public.json
+curl -k https://vrpirates.wiki/downloads/vrp-public.json
 ```
 ```json
 {

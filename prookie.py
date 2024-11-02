@@ -9,7 +9,7 @@ import os
 # Disable SSL warnings
 requests.packages.urllib3.disable_warnings()
 
-class VRPirates:
+class pRookie:
     def __init__(self, config_link: str, root_directory: str = 'config') -> None:
         # Ensure the presence of rclone/7z
         self._assert_bins()
@@ -196,7 +196,7 @@ class VRPirates:
 
 
 if __name__ == '__main__':
-    downloader = VRPirates(config_link='https://raw.githubusercontent.com/vrpyou/quest/main/vrp-public.json')
+    downloader = pRookie(config_link='https://vrpirates.wiki/downloads/vrp-public.json')
 
     downloader.update_game_list()
     downloader.search_game()
