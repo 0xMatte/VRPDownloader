@@ -89,5 +89,5 @@ adb shell mkdir /sdcard/Android/obb/com.beatgames.beatsaber
 ```
 Push the _obb_ files
 ```sh
-adb push com.beatgames.beatsaber/* /sdcard/Android/obb/com.beatgames.beatsaber
+adb push com.beatgames.beatsaber /sdcard/Android/obb/
 ```
